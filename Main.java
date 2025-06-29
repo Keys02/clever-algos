@@ -12,13 +12,13 @@ public class Main {
         
         String[] numbersToArr = numbersInput.split("[, \\s+]+"); // Splitting with multiple delimiters
         
-        float[] numbers = new float[numbersToArr.length];
+        double[] numbers = new double[numbersToArr.length];
         
         for (int i = 0; i < numbers.length; i++) {
             try {
-                numbers[i] = Float.parseFloat(numbersToArr[i]);
+                numbers[i] = Double.parseDouble(numbersToArr[i]);
             } catch(NumberFormatException e) {
-                System.out.println("⚠️: Enter only numbers or decimals");
+                System.out.println("\u26A0: Enter only numbers or decimals");
                 System.exit(0);
             }
         }
