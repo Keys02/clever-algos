@@ -12,10 +12,8 @@ public class SequentialSearch {
         arr.add(key);
         int i = 0;
         
-//        while (arr.get(i) != key) { i++; }
-        while ((double) arr.get(i) != key) {
-            i++;
-        }
+        while ((double) arr.get(i) != key) { i++; }
+        
         System.out.println("i: " + i);
         arr.remove(arr.size() - 1);
         

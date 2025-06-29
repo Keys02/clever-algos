@@ -8,10 +8,10 @@ public class Main {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("Enter all the numbers separated with comma or whitespace");
+        System.out.println("Enter all the numbers separated with comma or whitespace \n(NB: Do not separate the numbers with whitespace after a comma)");
         String numbersInput = scanner.nextLine();
         
-        String[] numbersToArr = numbersInput.split("[, \\s+]+"); // Splitting with multiple delimiters
+        String[] numbersToArr = numbersInput.split("[,\\s+]+"); // Splitting with multiple delimiters
         
 //        Double numbers[] = new Double[numbersToArr.length];
         ArrayList<Double> nums = new ArrayList<Double>(numbersToArr.length);
@@ -34,7 +34,6 @@ public class Main {
         */
         System.out.println("Search with sentinel: The number can be found at index " + SequentialSearch.searchWithSentinel(nums, numToBeSearched)); // Runtime in Big O Notation: O(n), Execution time: 12.3804ms
 //        System.out.println("Search without sentinel: " + SequentialSearch.searchWithoutSentinel(nums, 6)); // Runtime in Big O Notation: O(n), Execution time: 13.2883ms
-//        System.out.println((System.nanoTime() - SequentialSearch.start) / 1000000 + "ms") ; // Calculating the execution time.
-//        scanner.close();
+        scanner.close();
     }
 }
