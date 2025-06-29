@@ -7,29 +7,34 @@ import java.util.Scanner;
 public class Main {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
+        
         System.out.println("Enter all the numbers separated with comma or whitespace");
         String numbersInput = scanner.nextLine();
         
         String[] numbersToArr = numbersInput.split("[, \\s+]+"); // Splitting with multiple delimiters
         
-        double[] numbers = new double[numbersToArr.length];
+//        Double numbers[] = new Double[numbersToArr.length];
+        ArrayList<Double> nums = new ArrayList<Double>(numbersToArr.length);
         
-        for (int i = 0; i < numbers.length; i++) {
+        for (int i = 0; i < numbersToArr.length; i++) {
             try {
-                numbers[i] = Double.parseDouble(numbersToArr[i]);
+                  nums.add(Double.parseDouble(numbersToArr[i]));
+//                    numbers[i] = Double.parseDouble(numbersToArr[i]);
             } catch(NumberFormatException e) {
-                System.out.println("\u26A0: Enter only numbers or decimals");
+                System.out.println("Warning: Enter only integers or decimals");
                 System.exit(0);
             }
         }
+        System.out.println("Enter the number you want to search");
+        Double numToBeSearched = scanner.nextDouble();
         
-//        ArrayList<Integer> nums = new ArrayList<Integer>(Arrays.asList(4,5,6,7));
-//        /*
-//            The algorithm with the sentinel appended at the end of list is slightly faster than without sentinel since there exist a simpler check in the loop body, so the                    iteration goes faster.
-//        */
-//        System.out.println("Search with sentinel: " + SequentialSearch.searchWithSentinel(nums, 10)); // Performance: O(n), Execution time: 12.3804ms
-////        System.out.println("Search without sentinel: " + SequentialSearch.searchWithoutSentinel(nums, 6)); // Performance: 0(n), Execution time: 13.2883ms
+        
+        /*
+            The algorithm with the sentinel appended at the end of list is slightly faster than without sentinel since there exist a simpler check in the loop body, so the                    iteration goes faster.
+        */
+        System.out.println("Search with sentinel: The number can be found at index " + SequentialSearch.searchWithSentinel(nums, numToBeSearched)); // Runtime in Big O Notation: O(n), Execution time: 12.3804ms
+//        System.out.println("Search without sentinel: " + SequentialSearch.searchWithoutSentinel(nums, 6)); // Runtime in Big O Notation: O(n), Execution time: 13.2883ms
 //        System.out.println((System.nanoTime() - SequentialSearch.start) / 1000000 + "ms") ; // Calculating the execution time.
-        scanner.close();
+//        scanner.close();
     }
 }
