@@ -8,10 +8,21 @@ public class Main {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter all the numbers separated with comma or whitespace");
-        String numbers = scanner.nextLine();
+        String numbersInput = scanner.nextLine();
         
-        String[] numbersToArr = numbers.split("[, \\s+]+"); // Splitting with multiple delimiters
-        System.out.println(numbersToArr[3]);
+        String[] numbersToArr = numbersInput.split("[, \\s+]+"); // Splitting with multiple delimiters
+        
+        float[] numbers = new float[numbersToArr.length];
+        
+        for (int i = 0; i < numbers.length; i++) {
+            try {
+                numbers[i] = Float.parseFloat(numbersToArr[i]);
+            } catch(NumberFormatException e) {
+                System.out.println("⚠️: Enter only numbers or decimals");
+                System.exit(0);
+            }
+        }
+        
 //        ArrayList<Integer> nums = new ArrayList<Integer>(Arrays.asList(4,5,6,7));
 //        /*
 //            The algorithm with the sentinel appended at the end of list is slightly faster than without sentinel since there exist a simpler check in the loop body, so the                    iteration goes faster.
