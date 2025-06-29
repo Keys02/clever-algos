@@ -26,8 +26,8 @@ public class Main {
             }
         }
         System.out.println("Enter the number you want to search");
-        
         double numToBeSearched = scanner.nextDouble();
+        
         System.out.println("Search with sentinel: The number can be found at index " + SequentialSearch.searchWithSentinel(nums, numToBeSearched)); // Runtime in Big O Notation: O(n)
         
         /*
