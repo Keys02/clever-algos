@@ -8,7 +8,7 @@ public class Main {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("Enter all the numbers separated with comma or whitespace");
+        System.out.println("Enter all numbers separated with comma or whitespace");
         String numbersInput = scanner.nextLine();
         
         String[] numbersToArr = numbersInput.split("[,\\s+(, )]+"); // Splitting with multiple delimiters

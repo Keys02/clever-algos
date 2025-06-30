@@ -19,21 +19,7 @@ public class SequentialSearch {
         return (i == arrayLength) ? -1 : i;
    }
    
-//   public static int searchWithSentinel(Double[] arr, Double key) {
-//        int arrayLength = arr.length;
-//        arr[arrayLength-1] = key;
-//        int i = 0;
-//        
-////        while (arr.get(i) != key) { i++; }
-//        while (arr[i] != key) {
-//            i++;
-//        }
-//        System.out.println("i: " + i);
-////        ArrayUtils.remove(arr, arrayLength - 1);
-//        
-//        return (i == arrayLength) ? -1 : i;
-//   }
-   
+
    public static int searchWithoutSentinel(List arr, int key) {
        for (int i = 0; i < arr.size(); i++) {
           if ((int) arr.get(i) == key) { return i; }
