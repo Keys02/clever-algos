@@ -1,6 +1,9 @@
+/*--------------------------------------------------------
+    Recursive function which calculates the maximun number 
+    in a list
+/*-------------------------------------------------------- */
 function findMax(array) {
     if (array.length === 1) return array[0]
-
     return array[0] > findMax(array.slice(1)) ? array[0] : findMax(array.slice(1))
 }
 
