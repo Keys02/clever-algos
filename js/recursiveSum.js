@@ -10,10 +10,10 @@
 /*-------------------------------------------------------- */
 // ES5 
 function sumArrayES5(array) {
-    return (array.length === 0) ? 0 : array[0] + sum(array.slice(1))
+    return (array.length === 0) ? 0 : array[0] + sumArrayES5(array.slice(1))
 }
 
 // ES6
-let sumArrayES6 = (array) => (array.length === 0) ? 0 : array[0] + sum(array.slice(1))
+let sumArrayES6 = (array) => (array.length === 0) ? 0 : array[0] + sumArrayES6(array.slice(1))
 
-console.log(sum([1,2,3,4,5]))
+console.log(sumArrayES6([1,2,3,4,5]))
