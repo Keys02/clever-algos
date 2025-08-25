@@ -1,4 +1,4 @@
-# clever Algorithms 🧠✨  
+# Clever Algorithms 🧠✨  
 
 > Fundamental algorithms, but with a *clever twist*.  
 > Simple ideas, written in such a way that makes you go: *"Oh, I never thought of it like that."*  
