@@ -24,3 +24,5 @@ Clone the repo:
 ```bash
 git clone https://github.com/young-devs/clever-algos.git
 cd clever-algos
+```  
+#### To visualize your code use this free tool: [Python tutor](https://pythontutor.com/render.html#mode=edit)
