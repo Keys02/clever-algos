@@ -9,11 +9,8 @@ def binary_search(haystack, needle, start, end):
         return mid
     
     # Recursive case  
-    if needle > haystack[mid]:
-        return binary_search(haystack, needle, mid+1, end)
-    else:
-        return binary_search(haystack, needle, start, mid-1)
+    return binary_search(haystack, needle, mid+1, end) if needle > haystack[mid] else binary_search(haystack, needle, start, mid-1)
     
 my_list = [1,2,6,7,8,9,10]
 
-print(binary_search(my_list, 10, 0, len(my_list)-1))
+print(binary_search(my_list, 7, 0, len(my_list)-1))
