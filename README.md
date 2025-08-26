@@ -28,4 +28,5 @@ cd clever-algos
 
 ## Commit message structure
 >> convential-commit-type(language>>topic): {main message}
+
 #### To visualize your code use this free tool: [Python tutor](https://pythontutor.com/render.html#mode=edit)
