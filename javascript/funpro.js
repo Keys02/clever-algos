@@ -26,8 +26,7 @@ function filter(callback, array) {
    if (length(array) === 0) return []
 
    // Recursive case
-    const firstElem = head(array)
-    const filteredFirstElem = callback(firstElem) ? [firstElem] : []
+    const filteredFirstElem = callback(head(array)) ? [head(array)] : []
     return concat(filteredFirstElem, filter(callback, tail(array)))
 }
 
@@ -39,9 +38,7 @@ function map(callback, array) {
     if (length(array) === 0) return []
 
     // Recursive case
-    const firstElem = head(array)
-    const mappedFirstElem = [callback(firstElem)] 
-    return concat(mappedFirstElem, map(callback, tail(array)))
+    return concat([callback(head(array))], map(callback, tail(array)))
 }
 
 /***************************
@@ -52,8 +49,7 @@ function reduce(callback, array) {
     if (length(array) === 0) return 0 
 
     // Recursive case
-    const firstElem = head(array)
-    const reducedFirstElement = callback(0, firstElem) 
+    const reducedFirstElement = callback(0, head(array)) 
     return reducedFirstElement + reduce(callback, tail(array))
 }
 
