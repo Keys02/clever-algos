@@ -63,10 +63,10 @@ function reduceWithAnyReducer(callback, accumulator, array) {
 }
 
 let list = [2,3,5,8,2, 10, 100]
+
 let filteredArray = filter(elem => elem % 2 === 0, list)
 let mappedArray = map(elem => elem ** 2, list)
 let reducedArray = reduce((accumulator, elem) => accumulator + elem, list)
-
 let sumReducer = (array) => {
     return reduceWithAnyReducer(
         (accumulator, elem) =>  accumulator + elem,
@@ -74,7 +74,6 @@ let sumReducer = (array) => {
         array
     )
 }
-
 let maxReducer = (array) => {
     return reduceWithAnyReducer(
         (accumulator, elem) => accumulator < elem ? elem : accumulator,
