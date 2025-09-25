@@ -53,11 +53,38 @@ function reduce(callback, array) {
     return reducedFirstElement + reduce(callback, tail(array))
 }
 
-let list = [2,3,5,8,2]
+function reduceWithAnyReducer(callback, accumulator, array) {
+    // Base case
+    if (length(array) === 0) return accumulator 
+
+    // Recursive case
+    const reducedFirstElement = callback(accumulator, head(array))
+    return reduceWithAnyReducer(callback, reducedFirstElement, tail(array))
+}
+
+let list = [2,3,5,8,2, 10, 100]
 let filteredArray = filter(elem => elem % 2 === 0, list)
 let mappedArray = map(elem => elem ** 2, list)
 let reducedArray = reduce((accumulator, elem) => accumulator + elem, list)
 
+let sumReducer = (array) => {
+    return reduceWithAnyReducer(
+        (accumulator, elem) =>  accumulator + elem,
+        0,
+        array
+    )
+}
+
+let maxReducer = (array) => {
+    return reduceWithAnyReducer(
+        (accumulator, elem) => accumulator < elem ? elem : accumulator,
+        array[0],
+        array
+    )
+}
+
 console.log(filteredArray)
 console.log(mappedArray)
 console.log(reducedArray)
+console.log(sumReducer(list))
+console.log(maxReducer(list))
