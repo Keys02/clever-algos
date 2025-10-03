@@ -7,9 +7,10 @@ function fib(n) {
 }
 
 function fibList(n) {
-    if (n === 1) return [0, 1]
+    if (n === 1) return [1]
+    if (n === 2) return [1, 1]
     const arr = fibList(n-1)
     return [...arr, arr[n-1] + arr[n-2]]
 }
 
-console.log(fibList(4))
+console.log(fibList(1))
