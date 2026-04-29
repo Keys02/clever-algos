@@ -16,4 +16,3 @@ def binary_search(haystack, needle):
     return None;
 
 print(binary_search([1, 3, 8, 9, 20], 20))
-
