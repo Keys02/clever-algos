@@ -23,7 +23,7 @@ class LinkedList {
             while (currentHead) {
                     if (currentHead.next == null) {
                         currentHead.next = new Node(data)
-                        break;
+                        break
                     }
                 currentHead = currentHead.next
             }
