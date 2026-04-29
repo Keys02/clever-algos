@@ -14,10 +14,36 @@ class LinkedList {
     insertFirst(data) {
         this.head = new Node(data, this.head) // use the previous head
     }
+
+    insertLast(data) {
+        if (!this.head) {
+            this.head = new Node(data)
+        } else {
+            let currentHead = this.head
+            while (currentHead) {
+                    if (currentHead.next == null) {
+                        currentHead.next = new Node(data)
+                        break;
+                    }
+                currentHead = currentHead.next
+            }
+        }
+    }
+
+
+    printListData() {
+        let currentHead = this.head 
+
+        while (currentHead) {
+            console.log(currentHead.data)
+            currentHead = currentHead.next;
+        }
+    }
 }
 
 let ll = new LinkedList()
 ll.insertFirst(100)
 ll.insertFirst(200)
 ll.insertFirst(300)
-console.log(ll)
+ll.insertLast(400)
+ll.printListData()
