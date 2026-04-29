@@ -13,6 +13,7 @@ class LinkedList {
 
     insertFirst(data) {
         this.head = new Node(data, this.head) // use the previous head
+        this.size++
     }
 
     insertLast(data) {
@@ -28,6 +29,7 @@ class LinkedList {
                 currentHead = currentHead.next
             }
         }
+        this.size++
     }
 
 
