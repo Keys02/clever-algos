@@ -7,10 +7,11 @@ function fib(n) {
 }
 
 function fibList(n) {
-    if (n === 1) return [1]
-    if (n === 2) return [1, 1]
-    const arr = fibList(n-1)
-    return [...arr, arr[n-1] + arr[n-2]]
+    let fibSeq = [0, 1]
+
+    while(n != fibSeq.length) fibSeq.push(fibSeq[fibSeq.length - 1] + fibSeq[fibSeq.length - 2])
+
+    return fibSeq
 }
 
-console.log(fibList(1))
+console.log(fibList(10))
