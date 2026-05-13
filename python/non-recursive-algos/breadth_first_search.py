@@ -11,11 +11,11 @@ graph["thom"] = []
 graph["jonny"] = []
 
 def person_is_programmer(name):
-    return name[-1] == 'p'
+    return name[-1] == 'p' # a person is a programmer if his/her name ends with p
 
 def bfs(name):
     search_queue = deque()
-    search_queue += graph[name]
+    search_queue += graph[name] # the array gets merged when added to the queue
     searched = set()
 
     while search_queue: # while the search queue isn't empty
@@ -26,7 +26,7 @@ def bfs(name):
                 print(person + " is a programmer!")
                 return True
             else:
-                search_queue += graph[person]
+                search_queue += graph[person] # add the person to the end of the queue (FIFO)
                 searched.add(person)
 
     return False
